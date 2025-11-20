@@ -38,8 +38,6 @@ model = models.Sequential([
   layers.Dense(10, activation='softmax') 
 ])
 
-model.summary()
-
 # total number of trainable parameters (from gpt)
 trainable_params = np.sum(
   [tf.keras.backend.count_params(w) for w in model.trainable_weights]
@@ -109,3 +107,10 @@ for i, class_id in enumerate(sorted(chosen.keys())):
   plt.savefig(f'imgs/misclassfied_{class_names[class_id]}.png', dpi=150)
   plt.show()
   # check submission.md for the saved plots
+
+
+"""
+Other Observations
+so I do figureed that sometimes correct result would be labeled as wrong (based on my own observation), my guess of the reason is that they are the outlier
+And looking at the sublinear growth of train accuracy indicating a great growth in the first few epochs and smaller increase in later epochs. and the validation accuracy also sort of follow the same trend states that we are fitting the model just well.
+"""
