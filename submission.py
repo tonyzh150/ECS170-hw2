@@ -69,7 +69,7 @@ plt.title('Training vs Validation Accuracy')
 plt.legend()
 plt.grid(True)
 plt.savefig('imgs/training_validation_accuracy.png', dpi=150)
-# plt.show()
+plt.show()
 # check submission.md for the saved plot
 
 
@@ -107,5 +107,5 @@ for i, class_id in enumerate(sorted(chosen.keys())):
       f"True: {class_names[class_id]}\nPredicted: {class_names[y_pred[index]]}"
     )
     plt.savefig(f'imgs/misclassfied_{class_names[class_id]}.png', dpi=150)
-    # plt.show()
+    plt.show()
     # check submission.md for the saved plots
