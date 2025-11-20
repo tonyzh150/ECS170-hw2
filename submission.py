@@ -72,12 +72,12 @@ plt.savefig('imgs/training_validation_accuracy.png', dpi=150)
 plt.show()
 # check submission.md for the saved plot
 
-
+# Evaluate accuracy on the test set.
 test_loss, test_acc = model.evaluate(X_test, y_test, verbose=0)
 print("Test accuracy:", test_acc)
-print("Test loss:", test_loss)
 
 
+# Show an example from the test set for each class where the model misclassifies.
 y_pred_probs = model.predict(X_test)
 y_pred = np.argmax(y_pred_probs, axis=1)
 
@@ -108,4 +108,4 @@ for i, class_id in enumerate(sorted(chosen.keys())):
   )
   plt.savefig(f'imgs/misclassfied_{class_names[class_id]}.png', dpi=150)
   plt.show()
-    # check submission.md for the saved plots
+  # check submission.md for the saved plots
