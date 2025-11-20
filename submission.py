@@ -98,14 +98,14 @@ for idx in misclassfied:
     break
     
 for i, class_id in enumerate(sorted(chosen.keys())):
-    index = chosen[class_id]
-    img = X_test[index].squeeze()
-    plt.figure()
-    plt.imshow(img, cmap='gray')
-    plt.axis('off')
-    plt.title(
-      f"True: {class_names[class_id]}\nPredicted: {class_names[y_pred[index]]}"
-    )
-    plt.savefig(f'imgs/misclassfied_{class_names[class_id]}.png', dpi=150)
-    plt.show()
+  index = chosen[class_id]
+  img = X_test[index].squeeze()
+  plt.figure()
+  plt.imshow(img, cmap='gray')
+  plt.axis('off')
+  plt.title(
+    f"True: {class_names[class_id]}\nPredicted: {class_names[y_pred[index]]}"
+  )
+  plt.savefig(f'imgs/misclassfied_{class_names[class_id]}.png', dpi=150)
+  plt.show()
     # check submission.md for the saved plots
